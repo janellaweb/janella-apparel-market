@@ -11,11 +11,18 @@ function ProductsPage() {
     })
   }, [])
 
+  function handleCategorySelect(categoryName) {
+    console.log('Selected category:', categoryName)
+  }
+
   return (
     <main>
       <h2>Janella Apparel Market</h2>
 
-      <CategoryMenu categories={categories} />
+      <CategoryMenu
+        categories={categories}
+        onCategorySelect={handleCategorySelect}
+      />
     </main>
   )
 }
