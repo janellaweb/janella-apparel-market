@@ -19,11 +19,27 @@ function ProductsPage() {
   }
 
   return (
-    <main>
-      <h2>Janella Apparel Market</h2>
+    <main className="products-page">
+      <section className="hero">
+        <div className="hero-text">
+          <h1>
+            Janella&apos;s <br />
+            <span>Apparel Market</span>
+          </h1>
+
+          <p>
+            Trendy styles, everyday comfort. Discover your new favorites and
+            express your unique style.
+          </p>
+
+          <button className="hero-button">SHOP NOW →</button>
+        </div>
+
+        <div className="hero-image">Your apparel image here</div>
+      </section>
 
       {isLoading ? (
-        <p>Loading categories...</p>
+        <p className="loading">Loading categories...</p>
       ) : (
         <CategoryMenu
           categories={categories}

@@ -1,0 +1,36 @@
+.header {
+  margin: 16px;
+  padding: 18px 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logo span {
+  display: block;
+  color: #6d28d9;
+  font-size: 14px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: #6d28d9;
+}

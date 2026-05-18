@@ -11,19 +11,24 @@ function CategoryMenu({ categories, onCategorySelect }) {
   }
 
   return (
-    <section>
-      <h3>Shop by Category</h3>
+    <section className="category-section">
+        <div className="category-header">
+        <h2>Shop by Category</h2>
+        <p>Find your perfect style</p>
+        </div>
 
-      {categories.map((category) => (
-        <CategoryMenuItem
-          key={category.name}
-          categoryName={category.name}
-          isSelected={selectedCategory === category.name}
-          onCategoryClick={handleCategoryClick}
-        />
-      ))}
+        <div className="category-grid">
+        {categories.map((category) => (
+            <CategoryMenuItem
+            key={category.name}
+            categoryName={category.name}
+            isSelected={selectedCategory === category.name}
+            onCategoryClick={handleCategoryClick}
+            />
+        ))}
+        </div>
     </section>
-  )
+    )
 }
 
 export default CategoryMenu

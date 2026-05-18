@@ -5,19 +5,23 @@ function CategoryMenuItem({
   isSelected,
   onCategoryClick
 }) {
+  const isWideCard = categoryName === 'Bags' || categoryName === 'Socks'
+
   return (
     <button
+      className={`category-card ${isSelected ? 'selected' : ''} ${
+        isWideCard ? 'wide' : 'small'
+      }`}
       onClick={() => onCategoryClick(categoryName)}
-      style={{
-        backgroundColor: isSelected ? 'black' : 'white',
-        color: isSelected ? 'white' : 'black',
-        margin: '5px',
-        padding: '10px',
-        border: '1px solid black',
-        cursor: 'pointer'
-      }}
     >
-      {categoryName}
+      <div>
+        <h3>{categoryName}</h3>
+        <p>Explore {categoryName.toLowerCase()} collection</p>
+      </div>
+
+      <div className="category-image-placeholder">
+        Image will go here
+      </div>
     </button>
   )
 }

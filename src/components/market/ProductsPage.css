@@ -1,0 +1,59 @@
+.products-page {
+  padding: 16px;
+}
+
+.hero {
+  min-height: 360px;
+  padding: 60px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffffff, #f3e8ff);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  border: 1px solid #eadcff;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  line-height: 1;
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+
+.hero-text h1 span {
+  color: #7c3aed;
+}
+
+.hero-text p {
+  font-size: 22px;
+  color: #4b5563;
+  max-width: 520px;
+  font-weight: 400;
+}
+
+.hero-button {
+  margin-top: 24px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f46e5, #c026d3);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hero-image {
+  height: 280px;
+  border-radius: 22px;
+  background: rgba(124, 58, 237, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+}

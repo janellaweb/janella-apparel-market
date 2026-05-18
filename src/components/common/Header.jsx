@@ -2,9 +2,16 @@ import './Header.css'
 
 function Header() {
   return (
-    <header>
-      <h1>Janella Apparel Market</h1>
-      <p>Your favorite apparel and fashion essentials.</p>
+    <header className="header">
+      <div className="logo">
+        Janella&apos;s
+        <span>Apparel Market</span>
+      </div>
+
+      <nav className="nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+      </nav>
     </header>
   )
 }
