@@ -45,7 +45,6 @@
 .hero-image {
   height: 280px;
   border-radius: 22px;
-  background: rgba(124, 58, 237, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,4 +55,15 @@
   text-align: center;
   margin-top: 40px;
   color: #6b7280;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  transform: translateX(-80px);
+}
+
+.hero-text {
+  padding-left: 150px;
 }

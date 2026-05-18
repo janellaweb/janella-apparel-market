@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loadCategories } from '../../services/marketService'
 import CategoryMenu from './CategoryMenu'
 import './ProductsPage.css'
+import heroImage from '../../assets/hero.webp'
 
 function ProductsPage({ showCategories }) {
   const [categories, setCategories] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   const navigate = useNavigate()
-  const categorySectionRef = useRef(null)
 
   useEffect(() => {
     loadCategories().then((data) => {
@@ -17,14 +17,6 @@ function ProductsPage({ showCategories }) {
       setIsLoading(false)
     })
   }, [])
-
-  useEffect(() => {
-    if (showCategories && categorySectionRef.current) {
-      categorySectionRef.current.scrollIntoView({
-        behavior: 'smooth'
-      })
-    }
-  }, [showCategories])
 
   function handleCategorySelect(categoryName) {
     console.log('Selected category:', categoryName)
@@ -54,12 +46,16 @@ function ProductsPage({ showCategories }) {
         </div>
 
         <div className="hero-image">
-          Your apparel image here
-        </div>
+            <img
+                src={heroImage}
+                alt="Fashion Hero"
+                className="hero-photo"
+            />
+      </div>
       </section>
 
       {showCategories && (
-        <div ref={categorySectionRef}>
+        <>
           {isLoading ? (
             <p className="loading">Loading categories...</p>
           ) : (
@@ -68,7 +64,7 @@ function ProductsPage({ showCategories }) {
               onCategorySelect={handleCategorySelect}
             />
           )}
-        </div>
+        </>
       )}
     </main>
   )

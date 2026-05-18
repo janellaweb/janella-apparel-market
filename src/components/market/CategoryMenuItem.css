@@ -1,5 +1,5 @@
 .category-card {
-  min-height: 180px;
+  min-height: 220px;
   border: 1px solid #e5e7eb;
   border-radius: 22px;
   background: white;
@@ -30,7 +30,8 @@
 
 .category-card p {
   color: #6b7280;
-  margin: 8px 0 0;
+  margin-top: 12px;
+  line-height: 1.5;
 }
 
 .category-card.wide {
@@ -41,14 +42,21 @@
   grid-column: span 2;
 }
 
-.category-image-placeholder {
+.category-image-container {
   margin-top: 24px;
-  height: 110px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8b5cf6;
-  font-size: 14px;
+}
+
+.category-image {
+  max-width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  transition: 0.2s ease;
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.05);
 }

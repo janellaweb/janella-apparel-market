@@ -12,23 +12,23 @@ function CategoryMenu({ categories, onCategorySelect }) {
 
   return (
     <section className="category-section">
-        <div className="category-header">
+      <div className="category-header">
         <h2>Shop by Category</h2>
         <p>Find your perfect style</p>
-        </div>
+      </div>
 
-        <div className="category-grid">
+      <div className="category-grid">
         {categories.map((category) => (
-            <CategoryMenuItem
+          <CategoryMenuItem
             key={category.name}
-            categoryName={category.name}
+            category={category}
             isSelected={selectedCategory === category.name}
             onCategoryClick={handleCategoryClick}
-            />
+          />
         ))}
-        </div>
+      </div>
     </section>
-    )
+  )
 }
 
 export default CategoryMenu
