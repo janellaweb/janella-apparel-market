@@ -67,3 +67,28 @@
 .hero-text {
   padding-left: 150px;
 }
+
+.hero-button {
+  margin-top: 24px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f46e5, #c026d3);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
+  opacity: 0.95;
+}
+
+.hero-button:active {
+  transform: scale(0.96);
+}

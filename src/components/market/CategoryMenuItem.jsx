@@ -7,25 +7,26 @@ import socksImage from '../../assets/socks.webp'
 import './CategoryMenuItem.css'
 
 function CategoryMenuItem({
-  category,
+  categoryName,
+  categoryDescription,
   isSelected,
   onCategoryClick
 }) {
   const isWideCard =
-    category.name === 'Bags' ||
-    category.name === 'Socks'
+    categoryName === 'Bags' ||
+    categoryName === 'Socks'
 
   let categoryImage = ''
 
-  if (category.name === 'Shoes') {
+  if (categoryName === 'Shoes') {
     categoryImage = shoesImage
-  } else if (category.name === 'Hoodies') {
+  } else if (categoryName === 'Hoodies') {
     categoryImage = hoodieImage
-  } else if (category.name === 'Shirts') {
+  } else if (categoryName === 'Shirts') {
     categoryImage = shirtImage
-  } else if (category.name === 'Bags') {
+  } else if (categoryName === 'Bags') {
     categoryImage = bagImage
-  } else if (category.name === 'Socks') {
+  } else if (categoryName === 'Socks') {
     categoryImage = socksImage
   }
 
@@ -34,20 +35,20 @@ function CategoryMenuItem({
       className={`category-card ${
         isSelected ? 'selected' : ''
       } ${isWideCard ? 'wide' : 'small'}`}
-      onClick={() => onCategoryClick(category.name)}
+      onClick={() => onCategoryClick(categoryName)}
     >
       <div>
-        <h3>{category.name}</h3>
+        <h3>{categoryName}</h3>
 
         {isSelected && (
-          <p>{category.description}</p>
+          <p>{categoryDescription}</p>
         )}
       </div>
 
       <div className="category-image-container">
         <img
           src={categoryImage}
-          alt={category.name}
+          alt={categoryName}
           className="category-image"
         />
       </div>

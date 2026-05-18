@@ -34,3 +34,8 @@
 .nav a:hover {
   color: #6d28d9;
 }
+
+.logo-image {
+  height: 48px;
+  object-fit: contain;
+}

@@ -21,7 +21,8 @@ function CategoryMenu({ categories, onCategorySelect }) {
         {categories.map((category) => (
           <CategoryMenuItem
             key={category.name}
-            category={category}
+            categoryName={category.name}
+            categoryDescription={category.description}
             isSelected={selectedCategory === category.name}
             onCategoryClick={handleCategoryClick}
           />

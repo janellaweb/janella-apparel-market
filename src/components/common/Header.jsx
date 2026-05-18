@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
+import logoImage from '../../assets/jq-logo.svg'
 import './Header.css'
 
 function Header() {
   return (
     <header className="header">
       <div className="logo">
-        Janella&apos;s
-        <span>Apparel Market</span>
+        <img
+          src={logoImage}
+          alt="JQ Logo"
+          className="logo-image"
+        />
       </div>
 
       <nav className="nav">
