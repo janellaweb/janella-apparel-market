@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import CategoryMenuItem from './CategoryMenuItem'
+import './CategoryMenu.css'
 
 function CategoryMenu({ categories, onCategorySelect }) {
   const [selectedCategory, setSelectedCategory] = useState('')

@@ -1,3 +1,5 @@
+import './CategoryMenuItem.css'
+
 function CategoryMenuItem({
   categoryName,
   isSelected,
