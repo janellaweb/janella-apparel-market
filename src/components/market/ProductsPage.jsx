@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { loadCategories } from '../../services/marketService'
 import CategoryMenu from './CategoryMenu'
 import './ProductsPage.css'
 
-function ProductsPage() {
+function ProductsPage({ showCategories }) {
   const [categories, setCategories] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+
+  const navigate = useNavigate()
+  const categorySectionRef = useRef(null)
 
   useEffect(() => {
     loadCategories().then((data) => {
@@ -14,8 +18,20 @@ function ProductsPage() {
     })
   }, [])
 
+  useEffect(() => {
+    if (showCategories && categorySectionRef.current) {
+      categorySectionRef.current.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+  }, [showCategories])
+
   function handleCategorySelect(categoryName) {
     console.log('Selected category:', categoryName)
+  }
+
+  function handleShopNowClick() {
+    navigate('/products')
   }
 
   return (
@@ -32,19 +48,27 @@ function ProductsPage() {
             express your unique style.
           </p>
 
-          <button className="hero-button">SHOP NOW →</button>
+          <button className="hero-button" onClick={handleShopNowClick}>
+            SHOP NOW →
+          </button>
         </div>
 
-        <div className="hero-image">Your apparel image here</div>
+        <div className="hero-image">
+          Your apparel image here
+        </div>
       </section>
 
-      {isLoading ? (
-        <p className="loading">Loading categories...</p>
-      ) : (
-        <CategoryMenu
-          categories={categories}
-          onCategorySelect={handleCategorySelect}
-        />
+      {showCategories && (
+        <div ref={categorySectionRef}>
+          {isLoading ? (
+            <p className="loading">Loading categories...</p>
+          ) : (
+            <CategoryMenu
+              categories={categories}
+              onCategorySelect={handleCategorySelect}
+            />
+          )}
+        </div>
       )}
     </main>
   )
