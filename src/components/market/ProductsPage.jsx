@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { loadCategories } from '../../services/marketService'
+import CategoryMenu from './CategoryMenu'
 
 function ProductsPage() {
   const [categories, setCategories] = useState([])
@@ -13,7 +14,8 @@ function ProductsPage() {
   return (
     <main>
       <h2>Janella Apparel Market</h2>
-      <p>Loading categories from our market service...</p>
+
+      <CategoryMenu categories={categories} />
     </main>
   )
 }
